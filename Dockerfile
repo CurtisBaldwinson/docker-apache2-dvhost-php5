@@ -14,7 +14,7 @@ RUN apt-get -y install git php5-dev libpcre3-dev gcc make php5-mysql libapache2-
 RUN a2enmod rewrite
 RUN a2dissite 000-default
 RUN a2enmod vhost_alias
-ADD https://raw.githubusercontent.com/CurtisBaldwinson/docker-apache2-dvhost-php5/master/catchall /etc/apache2/sites-available/catchall
+ADD ./catchall /etc/apache2/sites-available/catchall
 RUN a2ensite catchall
 
 EXPOSE 80
